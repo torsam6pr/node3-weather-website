@@ -1,6 +1,3 @@
-console.log('Clientside Java Script file is loaded')
-
-
 //////////////////////////////////////////////////////////////////////////
 //Konsolenaufrufe: verarbeite Daten von HTTP-Abfragen in JavaScript
 
