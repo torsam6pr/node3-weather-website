@@ -3,6 +3,7 @@ const request = require('request')
 const forecastFunktion = (_latitude, _longitude, _callback) => {
     const urlString = 'http://api.weatherstack.com/current?access_key=2fd27af0c1fac3672ce014f6ff2806df&query=' + _latitude.toString() + ',' + _longitude.toString() + '&units=m'
     // console.log ('entstandener URL-String = ' + urlString )
+    // Beispiel-URL: http://api.weatherstack.com/current?access_key=2fd27af0c1fac3672ce014f6ff2806df&query=52.0,-13.42&units=m
 
     // Die Funktion request führt im Internet mit einer URL eine Abfrage durch und führt dann eine Funktion damit aus
     // json:true heißt, dass das Ergebnis zu einem JSON-Objekt geparst wird
@@ -18,7 +19,7 @@ const forecastFunktion = (_latitude, _longitude, _callback) => {
         }
         else{
             // gebe der Callback-Funktion 2 Werte zurück: ein mal "undefined" (weil es keinen Error gibt) und einen String  mit den abgerufenen Werten
-            _callback(undefined, 'Es ist ' + body.current.weather_descriptions[0] + '. Die Temperatur beträgt ' + body.current.temperature + '. Die gefühlte Temperatur ist ' + body.current.feelslike + '.')
+            _callback(undefined, 'Es ist ' + body.current.weather_descriptions[0] + '. Die Temperatur beträgt ' + body.current.temperature + '. Die gefühlte Temperatur ist ' + body.current.feelslike + '. Der Luftdruck beträgt ' + body.current.pressure + ' hPa. Die Luftfeuchte beträgt ' + body.current.humidity + ' Prozent.' )
         }
     })
 }
