@@ -1,0 +1,66 @@
+body{
+    color: #333333;
+    font-family: arial;
+    max-width: 650px;
+    /* damit wird alles gecentert. Erster Wert ist Abstandswert von oben und unten, zweiter WErt ist Abstand von rechts und links */
+    margin: 0 auto; 
+    /* es gibt 16 Pixel Abstand zwischen Inhalt und Browserfenster */
+    padding: 0 16px;
+    
+    /* Benutze den Flexbox-Stil */
+    display: flex;
+    flex-direction: column;
+    /* die minimale Höhe ist 100 Prozent der Viewport Height, also was im Browser dargestellt wird */
+    min-height: 100vh;
+}
+
+
+.main-content{
+    /* flex-grow: diese Box wird so groß, wie sie sein muss */
+    flex-grow: 1;
+}
+
+footer{
+    color: #888888;
+    /* am oberen Rand ist eine 1 Pixel große Linie, die fest ist (solid) und die Farbe #eeeeee hat */
+    border-top: 1px solid #eeeeee;
+    margin-top: 16px;
+    padding: 16px 0;
+}
+
+header{
+    margin-top: 16px;
+    margin-bottom: 48px;
+}
+
+h1{
+    font-size: 64px;
+    margin-bottom: 16px;
+}
+
+/* alle Links in Header werden folgendermaßen gestylet */
+header a {
+    color: #888888;
+    margin-right: 16px;
+    text-decoration: none;
+}
+
+/* alle HTML-ELemente mit "class="portrait" " werden so gestylet */
+.portrait {
+    width: 250px;
+}
+
+
+input{
+    border: 1px solid #cccccc;
+    padding: 8px;
+}
+
+button{
+    /* wenn man über den Button fährt, wird er zu einer Hand */
+    cursor: pointer;
+    border: 1px solid #888888;
+    background: #888888;
+    color: white;
+    padding: 8px;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        {{!-- diese HTML-Seite benutzt das CSS-Stylesheet "styles.css" --}}
+        <link rel="stylesheet" href="/css/styles.css">
+        {{!-- als Icon wird ein bestimmtes Bild angezeigt --}}
+        <link rel="icon" href="/img/weather.png">
+
+        <title>Weather</title>
+    </head>
+
+    <body>
+        <div class="main-content">
+            {{>header}}
+            <p>Benutzen Sie diese Seite für Ihr Wetter.</p>
+
+            {{!-- Formular zum Ort eingeben --}}
+            <form>
+                <input placeholder="Location">
+                <button>Search</button>
+            </form>
+
+            {{!-- Ergebnisse der Suchabfrage als Text --}}
+            <p id="message-1"></p>
+            <p id="message-2"></p>
+
+        </div>
+        
+        {{>footer}}
+
+
+        
+        {{!-- die Hauptseite verwendet die Web-App app.js --}}
+        {{!-- das Script wird ganz am Ende geladen, weil erst alle HTML-Elemente geladen sein müssen, damit das Skript damit arbeiten kann --}}
+        <script src="/js/app.js"></script>
+    </body>
+
+
+</html>

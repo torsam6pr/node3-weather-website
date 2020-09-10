@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="/css/styles.css">
+        <link rel="icon" href="/img/weather.png">
+        <title>
+            Help page
+        </title>
+    </head>
+
+    <body>
+        <div class="main-content">
+            {{>header}} 
+            {{!-- mit {{>}} werden Partials gekennzeichnet --}}
+            <p>Hilfetext: {{helpText}}</p>
+        </div>
+        
+        {{>footer}}
+    </body>
+
+</html>
