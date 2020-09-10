@@ -19,6 +19,10 @@ const forecastJS = require('./utils/forecast')
 //////////////////////////////////////////////////////////////////
 //Konstanten
 const app = express()
+// port nimmt den Wert "process.env.PORT" an, oder den Wert 3000, wenn der Wert nicht existiert
+// process.env.PORT sagt dem Online-Dienst Heroku unter welchem Port er diese Webseite hosten soll
+const port = process.env.PORT || 3000
+
 const publicDirectoryPath = path.join(__dirname, '../public')
 const viewsPath = path.join(__dirname, '../templates/views')
 const partialsPath = path.join(__dirname, '../templates/partials')
@@ -157,10 +161,14 @@ app.get('*', (req, res)=>{
 /*  "app.listen(3000, _Funktion)" richtet einen Server ein, auf Port 3000. Im Browser kann man den Server dann unter der Adresse "localhost:3000" besuchen.
 Das geht aber nur vom eigenen Computer aus, der Server wird lokal auf dem eigenen Computer gehostet. 
 Wenn der Server eingerichtet wird, wird die als Parameter angegebene Funktion ausgeführt. */
-app.listen(3000, ()=>{
-    console.log('Server is up on port 3000')
-})
+// app.listen(3000, ()=>{
+//     console.log('Server is up on port 3000')
+// })
 
+// Starte den Server auf einem bestimmten Port
+app.listen(port, ()=>{
+    console.log('Server is up on port ' + port)
+})
 
 
 
